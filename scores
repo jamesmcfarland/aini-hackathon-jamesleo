@@ -6,4 +6,9 @@
 77 - KNN
 59 - QDA
 84 - GaussianProcess - Too slow
-
+ 
+----tuning adaboost----
+Changed n_estimators to 1000 (from 50)
+Changed learning_rate to 0.25 (from 1)
+Tried changing algorithim to SAMME (from SAMME.R) this lowered accuracy
+ADABoost tuned= 85.4%
