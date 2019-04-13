@@ -1,2 +1,9 @@
 75 - multinovial NB - used TFIDF and CB
+81 - neural net
+77 - dectree
+80 - random forest
+83 - adaboost
+77 - KNN
+59 - QDA
+84 - GaussianProcess - Too slow
 
