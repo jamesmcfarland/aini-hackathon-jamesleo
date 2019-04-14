@@ -52,20 +52,6 @@ daf.to_pickle("./opDF.pkl")
 print(('Pickled Data'))
 
 
-# In[5]:
-
-
-print(daf.head(5))
-
-
-# In[6]:
-
-
-#!git clone https://github.com/jamesmcfarland/aini-hackathon-jamesleo.git
-#df= jamesD = shuffle(pd.read_csv("aini-hackathon-jamesleo/5050.csv"), random_state=12) 
-#df.head(3)
-
-
 # In[7]:
 
 
@@ -75,13 +61,6 @@ cv = TfidfVectorizer()
 x_vect = cv.fit_transform(daf["Review"])
 x_vect.shape
 print(('Vectorized Data'))
-
-
-# In[8]:
-
-
-print(cv.vocabulary_.get(u'bought'))
-
 
 # In[9]:
 
@@ -107,9 +86,7 @@ clf.score(x_test, y_test)
 
 
 ypreds = clf.predict(x_test)
-print(ypreds)
-
-
+print("Y predictions made")
 # In[13]:
 
 
@@ -139,7 +116,7 @@ print(f'Skearn precision: {sklearn.metrics.precision_score(y_test, ypreds):.2f}'
 accuracy = (tpos + tneg) / (tpos + tneg + fpos + fneg)
 print(f'Accuracy: {accuracy:.2f}')
 print(f'Sklearn accuracy: {clf.score(x_test, y_test):.2f}')
-print(f'Average score={((recall+skrecall+skpres+precision+skac+accuracy)/6)*100}')
+print(f'Average score={round(((recall+skrecall+skpres+precision+skac+accuracy)/6)*100)}%')
 
 
 # In[14]:
@@ -151,13 +128,11 @@ newTests = []
 for rvw in tests:
     rvw = rvw.replace("\n", "")
     newTests.append(rvw)
-print(('test data:'))
-print(newTests)
-
+print(('Test Data Sanitized'))
 
 # In[15]:
 
-
+print("Predicting new")
 preds = (clf.predict(cv.transform(newTests)))
 
 
@@ -168,13 +143,6 @@ preds2 = []
 for pred in preds:
     pred = round(pred)
     preds2.append(pred)
-
-
-# In[18]:
-
-
-np.savetxt("results1.txt", preds2, newline="\n")
-
 
 # In[19]:
 
