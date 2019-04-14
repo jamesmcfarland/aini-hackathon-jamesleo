@@ -8,12 +8,12 @@ from sklearn import *
 import sklearn
 import pandas as pd
 import numpy as np
-import matplotlib
+#import matplotlib
 from sklearn.utils import shuffle
 from sklearn.model_selection import train_test_split
 
-get_ipython().run_line_magic('matplotlib', 'inline')
-import matplotlib.pyplot as plt
+#get_ipython().run_line_magic('matplotlib', 'inline')
+#import matplotlib.pyplot as plt
 
 
 # In[2]:
