@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 # coding: utf-8
 
@@ -54,26 +55,6 @@ print('Data Pickled')
 daf.to_pickle("./opDF.pkl")
 
 
-# In[5]:
-
-
-#print(daf.head(5))
-
-
-# In[6]:
-
-
-#!git clone https://github.com/jamesmcfarland/aini-hackathon-jamesleo.git
-#df= jamesD = shuffle(pd.read_csv("aini-hackathon-jamesleo/5050.csv"), random_state=12) 
-#df.head(3)
-
-
-# In[ ]:
-
-
-
-
-
 # In[7]:
 
 
@@ -85,14 +66,6 @@ x, y = daf["Review"], daf["Class"]
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=12 )
 
-
-# In[9]:
-
-
-print(x_train.shape)
-print(x_test.shape)
-print(y_train.shape)
-print(y_test.shape)
 
 
 # In[10]:
@@ -129,7 +102,6 @@ clf.score((x_test), y_test)
 
 
 ypreds = clf.predict(x_test)
-print(ypreds)
 
 
 # In[15]:
@@ -161,7 +133,7 @@ print(f'Skearn precision: {sklearn.metrics.precision_score(y_test, ypreds):.2f}'
 accuracy = (tpos + tneg) / (tpos + tneg + fpos + fneg)
 print(f'Accuracy: {accuracy:.2f}')
 print(f'Sklearn accuracy: {clf.score(x_test, y_test):.2f}')
-print(f'Average score={((recall+skrecall+skpres+precision+skac+accuracy)/6)*100}')
+print(f'Average score={((recall+skrecall+skpres+precision+skac+accuracy)/6)*100}%')
 
 
 
@@ -171,8 +143,6 @@ newTests = []
 for rvw in tests:
     rvw = rvw.replace("\n", "")
     newTests.append(rvw)
-
-print(newTests)
 
 
 # In[17]:
@@ -189,11 +159,6 @@ for pred in preds:
     pred = round(pred)
     preds2.append(pred)
 
-
-# In[19]:
-
-
-print(preds2)
 
 
 # In[20]:
