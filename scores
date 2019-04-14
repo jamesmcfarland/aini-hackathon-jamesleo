@@ -12,6 +12,7 @@ Changed n_estimators to 1000 (from 50)
 Changed learning_rate to 0.25 (from 1)
 Tried changing algorithim to SAMME (from SAMME.R) this lowered accuracy
 ADABoost tuned= 85.4%
+
 --with new stats--
 DEFAULT
 Recall: 0.83
@@ -20,6 +21,7 @@ Precision: 0.85
 Skearn precision: 0.85
 Accuracy: 0.83
 Sklearn accuracy: 0.83
+
 -JAMES' TUNE-
 Recall: 0.85
 Sklearn recall: 0.85
@@ -27,5 +29,16 @@ Precision: 0.87
 Skearn precision: 0.87
 Accuracy: 0.85
 Sklearn accuracy: 0.85
+
 --JAMES' WITH BASE--
 SVC Takes forever to run (20m plus)
+
+--JAMES' W/OUT LEARNINGRATE--
+Recall: 0.86
+Sklearn recall: 0.86
+Precision: 0.86
+Skearn precision: 0.86
+Accuracy: 0.85
+Sklearn accuracy: 0.85
+
+
