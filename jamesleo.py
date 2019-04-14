@@ -38,25 +38,26 @@ fakeD = {key: 0 for (key) in fakes2}
 realD = {key: 1 for (key) in reals2}
 
 aRevs = {**fakeD, **realD}
-print(len(aRevs))
+print(('Read Data'))
+#print(len(aRevs))
 
 
 # In[3]:
 
-
+print(('Shuffled Data'))
 daf = shuffle(pd.DataFrame(list(aRevs.items()), columns=["Review", "Class"]), random_state=12)
 
 
 # In[4]:
 
-
+print('Data Pickled')
 daf.to_pickle("./opDF.pkl")
 
 
 # In[5]:
 
 
-print(daf.head(5))
+#print(daf.head(5))
 
 
 # In[6]:
@@ -108,11 +109,12 @@ x_test = cv.transform(x_test)
 
 x_train.shape
 
-
+print(('Vectorized Data'))
 # In[12]:
 
 
 from sklearn.ensemble import AdaBoostClassifier
+print(('Imported Adaptive Boost, building classifier'))
 clf = AdaBoostClassifier(n_estimators=130, learning_rate=.5)
 clf.fit(x_train, y_train)
 
@@ -162,20 +164,6 @@ print(f'Sklearn accuracy: {clf.score(x_test, y_test):.2f}')
 print(f'Average score={((recall+skrecall+skpres+precision+skac+accuracy)/6)*100}')
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[16]:
-
 
 tests = open("mixed_test_reviews.txt").readlines()
 
@@ -214,28 +202,5 @@ print(preds2)
 with open('res.txt', 'w') as f:
     for prid in preds2:
         f.write("%s\n" % prid)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
+print(('Outputted to res.txt'))
 
